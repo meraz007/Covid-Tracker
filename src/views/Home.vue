@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Covid tracker</h1>
+    <h1 class="font-bold">This is Home Page</h1>
   </div>
 </template>
 
