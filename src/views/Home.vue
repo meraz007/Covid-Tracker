@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <main v-if="!loading">
+
       <DateAndTime :text="title" :dataDate="dataDate"/>
       <DataBoxes :state="state" />
       <CountrySelect @get-country="getCountryData" :countries="countries" />
@@ -8,15 +9,14 @@
       <button
       @click="clearValue" 
       v-if="state.Country"
-      class="bg-green-700 text-white rounded p-3 mt-4 mx-auto flex focus:outline-none hover:bg-green-600">
+      class="bg-indigo-700 text-white rounded p-3 mt-4 mx-auto flex focus:outline-none hover:bg-indigo-500">
         Clear History
       </button>
     </main>
     <main v-else class="flex flex-col align-center justify-center text-center">
       <div class="text-gray-500 text-3xl mt-10 mb-6">
-        Fetching Data
+        {{loadData}}
       </div>
-
     </main>
   </div>
 </template>
@@ -38,7 +38,8 @@ export default {
       title:'Global',
       dataDate:'',
       loading:true,
-      countries:[]
+      countries:[],
+      loadData:'Loading...'
 
     }
   },
